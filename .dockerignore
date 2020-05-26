@@ -1,0 +1,12 @@
+.docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+.env
+.env.example
+.git
+.github
+.gitignore
+.idea
+node_modules
+README.md
