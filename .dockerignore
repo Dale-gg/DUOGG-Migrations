@@ -4,6 +4,7 @@ Dockerfile
 .dockerignore
 .env
 .env.example
+.env.testing
 .git
 .github
 .gitignore
