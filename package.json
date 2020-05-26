@@ -1,23 +1,21 @@
 {
   "name": "@dalegg/migrations",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "drop-schema": "ts-node-dev ./node_modules/typeorm/cli.js schema:drop",
-    "migrate": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
+    "migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "test": "cross-env NODE_ENV=testing node japaFile.js",
     "lint": "eslint ./src --ext=.ts",
     "lint:fix": "eslint ./src --fix --ext=.ts"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.2",
-    "@types/dotenv": "^8.2.0",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
-    "eslint": "^7.0.0",
+    "eslint": "^6.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-import-resolver-typescript": "^2.0.0",
@@ -26,11 +24,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "japa": "^3.0.1",
-    "prettier": "^2.0.5",
-    "supertest": "^4.0.2",
-    "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.8.3"
+    "prettier": "^2.0.5"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -40,6 +34,12 @@
     "reflect-metadata": "^0.1.13",
     "ts-node": "^8.10.1",
     "typeorm": "^0.2.24",
-    "uuidv4": "^6.0.7"
+    "uuidv4": "^6.0.7",
+    "supertest": "^4.0.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3",
+    "japa": "^3.0.1",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/dotenv": "^8.2.0"
   }
 }
