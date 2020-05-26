@@ -1,32 +1,9 @@
-import {
-  Entity,
-  CreateDateColumn,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-  Column,
-} from 'typeorm'
-import { ILaneObject } from '../Interfaces/ILane'
+import { Entity, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('lanes')
-class Lane implements ILaneObject {
+@Entity('gg_lanes')
+class Lane {
   @PrimaryGeneratedColumn('uuid')
   id: string
-
-  @Column()
-  name: string
-
-  @Column('varchar', {
-    array: true,
-    default: () => 'array[]::varchar[]',
-    nullable: true,
-  })
-  icons: string[]
-
-  @CreateDateColumn()
-  created_at: Date
-
-  @UpdateDateColumn()
-  updated_at: Date
 }
 
 export default Lane
