@@ -1,4 +1,9 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm'
+import {
+  MigrationInterface,
+  QueryRunner,
+  Table,
+  TableForeignKey,
+} from 'typeorm'
 
 export class CreateUserLane1590514796445 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -22,6 +27,30 @@ export class CreateUserLane1590514796445 implements MigrationInterface {
             type: 'uuid',
           },
         ],
+      }),
+    )
+
+    await queryRunner.createForeignKey(
+      'duo_users_lanes_duo_lanes',
+      new TableForeignKey({
+        columnNames: ['duoUsersId'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'duo_users',
+        name: 'PivotUserUser',
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      }),
+    )
+
+    await queryRunner.createForeignKey(
+      'duo_users_lanes_duo_lanes',
+      new TableForeignKey({
+        columnNames: ['duoLanesId'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'duo_lanes',
+        name: 'PivotUserLane',
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       }),
     )
   }
