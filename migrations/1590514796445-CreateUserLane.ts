@@ -26,6 +26,16 @@ export class CreateUserLane1590514796445 implements MigrationInterface {
             name: 'duoLanesId',
             type: 'uuid',
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     )
