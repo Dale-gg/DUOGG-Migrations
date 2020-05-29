@@ -26,6 +26,16 @@ export class CreateUserChampion1590514782489 implements MigrationInterface {
             name: 'ggChampionsId',
             type: 'uuid',
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     )
