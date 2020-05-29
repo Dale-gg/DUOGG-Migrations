@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "drop-schema": "ts-node-dev ./node_modules/typeorm/cli.js schema:drop",
+    "rollback": "ts-node-dev ./node_modules/typeorm/cli.js schema:drop",
     "migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "test": "cross-env NODE_ENV=testing node japaFile.js",
     "lint": "eslint ./src --ext=.ts",
