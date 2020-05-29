@@ -26,6 +26,16 @@ export class CreateDislike1590754049238 implements MigrationInterface {
             name: 'user_id_of_disliked_user',
             type: 'uuid',
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     )
