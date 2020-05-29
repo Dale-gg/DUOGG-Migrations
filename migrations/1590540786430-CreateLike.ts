@@ -26,6 +26,16 @@ export class CreateLike1590540786430 implements MigrationInterface {
             name: 'user_id_of_liked_user',
             type: 'uuid',
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     )
