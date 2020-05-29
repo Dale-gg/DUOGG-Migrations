@@ -48,8 +48,8 @@ export class CreateMessage1590755149549 implements MigrationInterface {
       'duo_messages',
       new TableForeignKey({
         columnNames: ['user_id'],
-        referencedColumnNames: ['user_id'],
-        referencedTableName: 'duo_chats',
+        referencedColumnNames: ['id'],
+        referencedTableName: 'duo_users',
         name: 'MessageUser',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
