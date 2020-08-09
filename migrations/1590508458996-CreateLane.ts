@@ -18,6 +18,10 @@ export class CreateLane1590508458996 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'prefix',
+            type: 'varchar',
+          },
+          {
             name: 'icons',
             type: 'varchar[]',
           },
