@@ -9,7 +9,7 @@ export class CreateToken1588254910835 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'duo_tokens',
+        name: 'duo_user_tokens',
         columns: [
           {
             name: 'id',

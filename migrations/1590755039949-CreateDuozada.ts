@@ -19,10 +19,6 @@ export class CreateDuozada1590755039949 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'duozada_date',
-            type: 'timestamp',
-          },
-          {
             name: 'like1_id',
             type: 'uuid',
           },

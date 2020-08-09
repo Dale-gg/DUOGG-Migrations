@@ -23,7 +23,7 @@ export class CreateLike1590540786430 implements MigrationInterface {
             type: 'uuid',
           },
           {
-            name: 'user_id_of_liked_user',
+            name: 'target_user_id',
             type: 'uuid',
           },
           {

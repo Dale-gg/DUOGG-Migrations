@@ -23,7 +23,7 @@ export class CreateDislike1590754049238 implements MigrationInterface {
             type: 'uuid',
           },
           {
-            name: 'user_id_of_disliked_user',
+            name: 'target_user_id',
             type: 'uuid',
           },
           {
