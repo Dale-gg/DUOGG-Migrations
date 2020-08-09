@@ -49,7 +49,7 @@ export class CreateToken1588254910835 implements MigrationInterface {
     )
 
     await queryRunner.createForeignKey(
-      'duo_tokens',
+      'duo_user_tokens',
       new TableForeignKey({
         columnNames: ['user_id'],
         referencedColumnNames: ['id'],
@@ -62,6 +62,6 @@ export class CreateToken1588254910835 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('duo_tokens')
+    await queryRunner.dropTable('duo_user_tokens')
   }
 }
