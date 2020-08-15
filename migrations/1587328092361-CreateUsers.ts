@@ -29,19 +29,10 @@ export default class CreateUsers1587328092361 implements MigrationInterface {
           {
             name: 'avatar',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'media',
-            type: 'varchar',
-            isNullable: true,
-          },
-          {
-            name: 'like',
-            type: 'varchar',
-            isNullable: true,
-          },
-          {
-            name: 'dislike',
             type: 'varchar',
             isNullable: true,
           },
