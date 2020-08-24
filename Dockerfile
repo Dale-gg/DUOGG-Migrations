@@ -1,12 +1,12 @@
-FROM alpine
-# FROM node:12-alpine
+# FROM alpine
+FROM node:12-alpine
 
-RUN apk add --no-cache bash postgresql=12.2-r0 nodejs yarn
+RUN apk add --no-cache bash postgresql=12.2-r0
 
 # ------------------------------------------
 # change the working directory
 # ------------------------------------------
-WORKDIR /node-app
+WORKDIR /usr/src/app/migrations
 
 # ------------------------------------------
 # copy content
