@@ -1,6 +1,6 @@
 {
   "name": "@dalegg/migrations",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -30,6 +30,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "@dale-gg/zedjs": "^1.1.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/dotenv": "^8.2.0",
     "bcryptjs": "^2.4.3",
