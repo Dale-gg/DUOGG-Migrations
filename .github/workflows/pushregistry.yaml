@@ -8,10 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+
       - name: Set NODE_AUTH_TOKEN
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sh -c "export NODE_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN  }}"
+
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
