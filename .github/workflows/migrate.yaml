@@ -20,20 +20,19 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10
 
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
-          always-auth: false
-          scope: dale-gg
 
       - name: Installation
-        run: yarn
+        run: yarn install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Conf ENV
-        run: sh -c "ls -a && cp .env.example .env"
+        run: cp .env.example .env
 
       - name: Try Linting
         run: yarn lint:fix
