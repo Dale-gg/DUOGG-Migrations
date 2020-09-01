@@ -24,16 +24,18 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
-          always-auth: false
-          scope: dale-gg
+
       - name: Conf ENV
         run: cp .env.example .env
+
       - name: Installation
         run: yarn
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Try Linting
         run: yarn lint:fix
+
       - name: Run migrations
         run: yarn migrate
         env:
