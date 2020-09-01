@@ -35,6 +35,10 @@ export default class CreateElo1598905645489 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'game_mode',
+            type: 'varchar',
+          },
+          {
             name: 'user_id',
             type: 'uuid',
           },
