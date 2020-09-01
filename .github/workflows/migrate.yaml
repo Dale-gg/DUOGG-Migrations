@@ -1,4 +1,5 @@
-name: Migrate Test
+name: CI Run Migrations
+
 on: [pull_request]
 
 jobs:
@@ -24,12 +25,18 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
+
+      - name: Installation
+        run: yarn install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Conf ENV
         run: cp .env.example .env
-      - name: Installation
-        run: yarn
+
       - name: Try Linting
         run: yarn lint:fix
+
       - name: Run migrations
         run: yarn migrate
         env:
