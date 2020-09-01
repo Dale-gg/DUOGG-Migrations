@@ -9,7 +9,7 @@ export default class CreateElo1598905645489 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'gg_tiers',
+        name: 'duo_elos',
         columns: [
           {
             name: 'id',
