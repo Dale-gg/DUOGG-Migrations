@@ -7,6 +7,7 @@ RUN apk add --no-cache bash postgresql=12.2-r0
 # change the working directory
 # ------------------------------------------
 WORKDIR /usr/src/app/migrations
+ARG NPM_AUTH_PKG
 
 # ------------------------------------------
 # copy content
@@ -16,7 +17,10 @@ COPY . .
 # ------------------------------------------
 # install dependences
 # ------------------------------------------
+RUN echo "//npm.pkg.github.com/:_authToken=${NPM_AUTH_PKG}" >> .npmrc
 RUN yarn install --production=true --non-interactive --silent
+
+RUN rm .npmrc
 
 # ------------------------------------------
 # yarn entrypoint
