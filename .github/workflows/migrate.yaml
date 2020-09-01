@@ -33,7 +33,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Conf ENV
-        run: cp .env.example .env
+        run: sh -c "ls -a && cp .env.example .env"
 
       - name: Try Linting
         run: yarn lint:fix
