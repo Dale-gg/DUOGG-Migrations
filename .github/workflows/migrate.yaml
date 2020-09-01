@@ -1,4 +1,5 @@
-name: [CI] Run Migrations
+name: CI Run Migrations
+
 on: [pull_request]
 
 jobs:
@@ -19,11 +20,12 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 10
 
     steps:
-      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
+          always-auth: false
+          scope: dale-gg
 
       - name: Conf ENV
         run: cp .env.example .env

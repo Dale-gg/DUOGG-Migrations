@@ -1,4 +1,4 @@
-name: [CD] Publish Package
+name: CD Publish Package
 
 on:
   push:
