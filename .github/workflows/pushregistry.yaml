@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Set NODE_AUTH_TOKEN
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
