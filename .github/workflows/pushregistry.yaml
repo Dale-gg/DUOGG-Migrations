@@ -14,9 +14,9 @@ jobs:
       - name: Configure Env
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.AUTH_REGISTRY }}
+          NODE_AUTH_TOKEN: ${{ secrets.AUTH_REGISTRY }}
         run: |
-          example-command "$AUTH_REGISTRY"
+          example-command "$NODE_AUTH_TOKEN"
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
