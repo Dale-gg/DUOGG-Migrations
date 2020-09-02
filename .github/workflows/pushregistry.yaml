@@ -14,8 +14,7 @@ jobs:
       - shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.AUTH_REGISTRY }}
-        run: |
-          example-command "$NODE_AUTH_TOKEN"
+        run: echo "$NODE_AUTH_TOKEN"
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
