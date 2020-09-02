@@ -2,6 +2,7 @@
 node_modules/
 build/
 temp/
+.npmrc
 
 .env.testing
 .env
