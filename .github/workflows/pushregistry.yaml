@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v1
 
       - name: Configure Env
-        run: export NODE_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        run: export NODE_AUTH_TOKEN=${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
