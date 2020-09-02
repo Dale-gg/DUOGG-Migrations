@@ -13,6 +13,8 @@ jobs:
 
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: jlenon7/duogg-migrations
           username: ${{ secrets.DOCKER_USERNAME }}
