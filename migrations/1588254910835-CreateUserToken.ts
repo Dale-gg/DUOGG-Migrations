@@ -24,15 +24,9 @@ export class CreateToken1588254910835 implements MigrationInterface {
           },
           {
             name: 'token',
-            type: 'varchar',
-          },
-          {
-            name: 'type',
-            type: 'varchar',
-          },
-          {
-            name: 'is_revoked',
-            type: 'boolean',
+            type: 'uuid',
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'created_at',
