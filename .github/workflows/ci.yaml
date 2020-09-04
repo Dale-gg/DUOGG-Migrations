@@ -37,7 +37,7 @@ jobs:
       - name: Try Linting
         run: yarn lint:fix
 
-      - name: Run migrations
-        run: yarn migrate
+      - name: Run Refresh/Migrations/Seeders
+        run: yarn refresh:migrate:seed
         env:
           CI: true
