@@ -1,4 +1,4 @@
-name: CI Run Migrations
+name: CI Migrations
 
 on: [pull_request]
 
