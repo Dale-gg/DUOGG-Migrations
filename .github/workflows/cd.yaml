@@ -16,7 +16,7 @@ jobs:
       env:
         NPM_AUTH_PKG: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: jlenon7/migrations
+        name: jlenon7/duogg-migrations
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         buildargs: NPM_AUTH_PKG
