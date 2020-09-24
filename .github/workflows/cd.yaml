@@ -35,11 +35,15 @@ jobs:
         aws-region: us-east-1
 
     - name: Save AWS Kubeconfig
-      run: aws eks --region us-east-1 update-kubeconfig --name $K8S_CLUSTER
+      run: aws eks --region us-east-1 update-kubeconfig --name $K8S_CLUSTER --role-arn arn:aws:iam::113148728783:role/ekclusterrole
+
+    - name: Export KUBECONFIG
+      run: export KUBECONFIG=~/.kube/config
 
     - name: Deploy to AWS Kubernetes
       run: kubectl set image $DEPLOY_CONF $PREFIX=$REGISTRY_REPO
 
     - name: Verify deployment
       run: kubectl rollout status $DEPLOY_CONF
+
 
