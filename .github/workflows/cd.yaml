@@ -5,6 +5,12 @@ on:
     branches:
       - master
 
+env:
+  PREFIX: migrations
+  REGISTRY_REPO: jlenon7/duogg-migrations
+  DEPLOY_CONF: deployment/migrations
+  K8S_CLUSTER: duogg-cluster
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,3 +26,20 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         buildargs: NPM_AUTH_PKG
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Save AWS Kubeconfig
+      run: aws eks --region us-east-1 update-kubeconfig --name $K8S_CLUSTER
+
+    - name: Deploy to AWS Kubernetes
+      run: kubectl set image $DEPLOY_CONF $PREFIX=$REGISTRY_REPO
+
+    - name: Verify deployment
+      run: kubectl rollout status $DEPLOY_CONF
+
