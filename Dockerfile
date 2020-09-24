@@ -1,7 +1,7 @@
 # FROM alpine
 FROM node:12-alpine
 
-RUN apk add --no-cache bash postgresql=12.2-r0
+RUN apk add --no-cache bash postgresql=12
 
 # ------------------------------------------
 # change the working directory
