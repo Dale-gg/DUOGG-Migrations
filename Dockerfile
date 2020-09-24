@@ -1,5 +1,5 @@
 # FROM alpine
-FROM alpine
+FROM node:12-alpine
 
 RUN apk add --no-cache bash postgresql-dev
 
