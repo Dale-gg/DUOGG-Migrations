@@ -35,7 +35,7 @@ jobs:
         aws-region: us-east-1
 
     - name: Save AWS Kubeconfig
-      run: aws eks --region us-east-1 update-kubeconfig --name $K8S_CLUSTER --role-arn arn:aws:iam::113148728783:role/eksworkernoderole
+      run: aws eks --region us-east-1 update-kubeconfig --name $K8S_CLUSTER
 
     - name: Export KUBECONFIG
       run: export KUBECONFIG=~/.kube/config
