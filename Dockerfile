@@ -1,7 +1,6 @@
-# FROM alpine
-FROM node:12-alpine
+FROM alpine
 
-RUN apk add --no-cache bash postgresql-dev
+RUN apk add --no-cache bash postgresql-dev nodejs yarn
 
 # ------------------------------------------
 # change the working directory
